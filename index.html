@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LenyeMStyles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --black:#0c0a08;
+      --white:#faf8f5;
+      --soft-pink:#f3e7ea;
+      --light-gray:#d9d9d9;
+      --warm-gray:#8e8680;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Jost',sans-serif;
+      background:var(--white);
+      color:var(--black);
+      line-height:1.6;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(250,248,245,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--light-gray);
+    }
+
+    .nav{
+      max-width:1200px;
+      margin:0 auto;
+      padding:18px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
+
+    .brand{
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.2rem;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:22px;
+      font-size:.8rem;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+    }
+
+    .hero{
+      min-height:90vh;
+      background:
+        linear-gradient(rgba(12,10,8,.35), rgba(12,10,8,.45)),
+        url('assets/hero/hero.jpeg') center/cover no-repeat;
+      color:white;
+      display:flex;
+      align-items:end;
+    }
+
+    .hero-inner{
+      max-width:1200px;
+      margin:0 auto;
+      width:100%;
+      padding:90px 20px 70px;
+    }
+
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:.28em;
+      font-size:.72rem;
+      opacity:.82;
+      margin-bottom:18px;
+    }
+
+    h1,h2,h3{
+      font-family:'Cormorant Garamond',serif;
+      font-weight:400;
+      line-height:1;
+    }
+
+    h1{
+      font-size:clamp(3.2rem,9vw,7rem);
+      max-width:700px;
+      margin-bottom:24px;
+    }
+
+    .hero p{
+      max-width:560px;
+      font-size:1rem;
+      opacity:.95;
+      margin-bottom:28px;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 24px;
+      border:1px solid white;
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.2em;
+      transition:.25s ease;
+    }
+
+    .btn.primary{
+      background:white;
+      color:var(--black);
+    }
+
+    .btn.secondary:hover{
+      background:white;
+      color:var(--black);
+    }
+
+    .section{
+      max-width:1200px;
+      margin:0 auto;
+      padding:90px 20px;
+    }
+
+    .intro{
+      display:grid;
+      grid-template-columns:220px 1fr;
+      gap:40px;
+      align-items:start;
+    }
+
+    .label{
+      font-size:.72rem;
+      text-transform:uppercase;
+      letter-spacing:.28em;
+      color:var(--warm-gray);
+    }
+
+    .intro-copy{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(2rem,4vw,4.3rem);
+      line-height:1.1;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      min-height:520px;
+      border-top:1px solid var(--light-gray);
+    }
+
+    .split.reverse{
+      grid-template-columns:.9fr 1.1fr;
+    }
+
+    .split-image{
+      min-height:420px;
+      background-size:cover;
+      background-position:center;
+    }
+
+    .split-copy{
+      padding:60px 34px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      background:var(--white);
+    }
+
+    .split-copy.dark{
+      background:var(--black);
+      color:white;
+    }
+
+    .num{
+      font-family:'Cormorant Garamond',serif;
+      font-size:4rem;
+      opacity:.18;
+      margin-bottom:12px;
+    }
+
+    .kicker{
+      text-transform:uppercase;
+      letter-spacing:.28em;
+      font-size:.72rem;
+      color:var(--warm-gray);
+      margin-bottom:12px;
+    }
+
+    .dark .kicker{color:rgba(255,255,255,.65)}
+
+    .split-copy h2{
+      font-size:clamp(2rem,4vw,3.8rem);
+      margin-bottom:14px;
+    }
+
+    .split-copy p{
+      max-width:420px;
+      color:inherit;
+      opacity:.8;
+    }
+
+    .products-wrap{
+      background:var(--black);
+      color:white;
+    }
+
+    .products-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:20px;
+      margin-bottom:32px;
+    }
+
+    .products-head h2{
+      font-size:clamp(2.2rem,4vw,4.4rem);
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:#151311;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .card img{
+      width:100%;
+      height:360px;
+      object-fit:cover;
+    }
+
+    .card-body{
+      padding:18px;
+    }
+
+    .card-tag{
+      font-size:.68rem;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.58);
+      margin-bottom:8px;
+    }
+
+    .card-title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.4rem;
+      margin-bottom:12px;
+    }
+
+    .price{
+      font-size:.95rem;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:14px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:380px;
+      object-fit:cover;
+      border-radius:2px;
+    }
+
+    .cta{
+      text-align:center;
+      padding:100px 20px;
+      border-top:1px solid var(--light-gray);
+    }
+
+    .cta h2{
+      font-size:clamp(2.8rem,6vw,5.8rem);
+      margin-bottom:22px;
+    }
+
+    .cta p{
+      max-width:620px;
+      margin:0 auto 26px;
+      color:var(--warm-gray);
+    }
+
+    footer{
+      border-top:1px solid var(--light-gray);
+      padding:28px 20px;
+      max-width:1200px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      font-size:.85rem;
+      color:var(--warm-gray);
+    }
+
+    @media (max-width: 900px){
+      .intro,
+      .split,
+      .split.reverse,
+      .products,
+      .gallery{
+        grid-template-columns:1fr;
+      }
+
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .nav-links{
+        flex-wrap:wrap;
+        gap:12px 16px;
+      }
+
+      .card img,
+      .gallery img{
+        height:300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <div class="brand">LenyeMStyles</div>
+      <div class="nav-links">
+        <a href="#collections">Collections</a>
+        <a href="#featured">Featured</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Eswatini · Fashion · Style</div>
+      <h1>Luxury style with presence.</h1>
+      <p>
+        LenyeMStyles is a modern fashion brand space for heels, bags, occasion wear
+        and statement pieces. Clean, elegant, and made to convert.
+      </p>
+      <div class="actions">
+        <a href="#collections" class="btn primary">Explore</a>
+        <a href="#contact" class="btn secondary">Order on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section intro">
+    <div class="label">Our Philosophy</div>
+    <div class="intro-copy">
+      LenyeMStyles is not just a catalogue. It is a point of view — refined,
+      feminine, modern, and impossible to ignore.
+    </div>
+  </section>
+
+  <section id="collections">
+    <div class="split">
+      <div class="split-image" style="background-image:url('https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1200&q=80');"></div>
+      <div class="split-copy">
+        <div class="num">01</div>
+        <div class="kicker">The Heels</div>
+        <h2>Sharp. Soft. Elegant.</h2>
+        <p>Statement heels and premium styles selected for women who want luxury with confidence.</p>
+      </div>
+    </div>
+
+    <div class="split reverse">
+      <div class="split-copy dark">
+        <div class="num">02</div>
+        <div class="kicker">The Bags</div>
+        <h2>Structure with intention.</h2>
+        <p>Refined bags and accessories that elevate everyday dressing and occasion wear.</p>
+      </div>
+      <div class="split-image" style="background-image:url('https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80');"></div>
+    </div>
+
+    <div class="split">
+      <div class="split-image" style="background-image:url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200&q=80');"></div>
+      <div class="split-copy">
+        <div class="num">03</div>
+        <div class="kicker">Occasion Wear</div>
+        <h2>Made for entrances.</h2>
+        <p>Pieces for events, dinners, celebrations and stylish moments that deserve attention.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="products-wrap" id="featured">
+    <div class="section">
+      <div class="products-head">
+        <div>
+          <div class="label" style="color:rgba(255,255,255,.55)">Featured Now</div>
+          <h2>The Edit</h2>
+        </div>
+      </div>
+
+      <div class="products">
+        <article class="card">
+          <img src="assets/featured/featured-1.jpeg" alt="Crystal Heels">
+          <div class="card-body">
+            <div class="card-tag">Luxury Heels</div>
+            <div class="card-title">Champagne Crystal Heels</div>
+            <div class="price">E 1,250</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/featured/featured-2.jpeg" alt="Patent Pumps">
+          <div class="card-body">
+            <div class="card-tag">Signature Picks</div>
+            <div class="card-title">Soft Nude Patent Pumps</div>
+            <div class="price">E 1,180</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/featured/featured-3.jpeg" alt="Evening Sandals">
+          <div class="card-body">
+            <div class="card-tag">Occasion Wear</div>
+            <div class="card-title">Gold Evening Sandals</div>
+            <div class="price">E 1,390</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/featured/featured-4.jpeg" alt="Structured Bag">
+          <div class="card-body">
+            <div class="card-tag">Accessories</div>
+            <div class="card-title">Structured Luxe Bag</div>
+            <div class="price">E 1,550</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div style="margin-bottom:24px">
+      <div class="label">Gallery</div>
+      <h2 style="font-size:clamp(2.2rem,4vw,4.4rem);margin-top:10px;">Luxury mood. Modern class.</h2>
+    </div>
+
+    <div class="gallery">
+      <img src="assets/gallery/gallery-1.jpeg" alt="Gallery 1">
+      <img src="assets/gallery/gallery-2.jpeg" alt="Gallery 2">
+      <img src="assets/gallery/gallery-3.jpeg" alt="Gallery 3">
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="label">Ready to Order</div>
+    <h2>Let us dress you properly.</h2>
+    <p>
+      Replace the WhatsApp number, prices and images later. For now, this gives you
+      a clean running starter site.
+    </p>
+    <a href="https://wa.me/26876867423" class="btn" style="border-color:#0c0a08;color:#fff;background:#0c0a08;">Chat on WhatsApp</a>
+  </section>
+
+  <footer>
+    <div>© 2026 LenyeMStyles</div>
+    <div>Eswatini · Luxury Fashion</div>
+  </footer>
+</body>
+</html>
